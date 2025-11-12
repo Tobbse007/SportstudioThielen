@@ -971,11 +971,638 @@
         </div>
     </div>
 
-    <!-- Placeholder for weitere Sections -->
-    <!-- Preise Section kommt hier -->
-    <!-- Blog Preview Section kommt hier -->
-    <!-- Kontakt Section kommt hier -->
-    <!-- Footer kommt hier -->
+    <!-- Preise Section -->
+    <section id="prices" class="py-20 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header -->
+            <div class="text-center mb-16 fade-in">
+                <span class="text-primary font-bold text-sm uppercase tracking-wider">Preise</span>
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mt-3 mb-6">
+                    Faire & transparente Preise
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Wähle das Paket, das zu deinem Trainingsrhythmus passt. Keine versteckten Kosten, keine Überraschungen.
+                </p>
+            </div>
+            
+            <!-- Price Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                
+                <!-- Schüler Monatsabo -->
+                <div class="fade-in bg-gray-50 p-8 hover:shadow-xl transition-all duration-300">
+                    <div class="text-center mb-6">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-primary/10 mb-4">
+                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Schüler Abo</h3>
+                        <div class="flex items-baseline justify-center mb-4">
+                            <span class="text-5xl font-bold text-primary">25€</span>
+                            <span class="text-gray-600 ml-2">/Monat</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">Perfekt für Schüler & Azubis</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">Zugang 6-22 Uhr täglich</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">Alle Geräte nutzbar</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">Transponder-Chip inklusive</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">Schülerausweis erforderlich</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block w-full bg-primary hover:bg-primary-dark text-white text-center py-3 font-semibold transition-colors">
+                        Jetzt anmelden
+                    </a>
+                </div>
+                
+                <!-- Normal Monatsabo -->
+                <div class="fade-in bg-primary p-8 hover:shadow-2xl transition-all duration-300 transform lg:scale-105 relative">
+                    <div class="absolute top-0 right-0 bg-white text-primary px-4 py-1 text-sm font-bold">
+                        BELIEBT
+                    </div>
+                    <div class="text-center mb-6">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-white/20 mb-4">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Normal Abo</h3>
+                        <div class="flex items-baseline justify-center mb-4">
+                            <span class="text-5xl font-bold text-white">30€</span>
+                            <span class="text-white/90 ml-2">/Monat</span>
+                        </div>
+                        <p class="text-white/90 text-sm">Unser Standard-Paket</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-white mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-white">Zugang 6-22 Uhr täglich</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-white mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-white">Alle Geräte nutzbar</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-white mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-white">Transponder-Chip inklusive</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-white mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-white">Flexibel monatlich kündbar</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block w-full bg-white hover:bg-gray-100 text-primary text-center py-3 font-semibold transition-colors">
+                        Jetzt anmelden
+                    </a>
+                </div>
+                
+                <!-- Familien/Paar Angebot -->
+                <div class="fade-in bg-gray-50 p-8 hover:shadow-xl transition-all duration-300">
+                    <div class="text-center mb-6">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-primary/10 mb-4">
+                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Familien/Paar</h3>
+                        <div class="flex items-baseline justify-center mb-4">
+                            <span class="text-5xl font-bold text-primary">25€</span>
+                            <span class="text-gray-600 ml-2">/Person</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">Ab 2 Personen</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">Zugang 6-22 Uhr täglich</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">Alle Geräte nutzbar</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">Transponder-Chip je Person</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">Gemeinsam sparen!</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block w-full bg-primary hover:bg-primary-dark text-white text-center py-3 font-semibold transition-colors">
+                        Jetzt anmelden
+                    </a>
+                </div>
+                
+            </div>
+            
+            <!-- Zusätzliche Optionen -->
+            <div class="fade-in max-w-4xl mx-auto">
+                <h3 class="text-2xl font-bold text-center text-gray-900 mb-8">Flexible Optionen</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <!-- Tageskarte -->
+                    <div class="bg-gray-50 p-6 flex items-center justify-between">
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-900 mb-1">Tageskarte</h4>
+                            <p class="text-gray-600">Einmaliger Zugang für einen Tag</p>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-3xl font-bold text-primary">8€</div>
+                            <div class="text-sm text-gray-600">pro Tag</div>
+                        </div>
+                    </div>
+                    
+                    <!-- 10er-Karte -->
+                    <div class="bg-gray-50 p-6 flex items-center justify-between">
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-900 mb-1">10er-Karte</h4>
+                            <p class="text-gray-600">10 Trainingseinheiten flexibel nutzbar</p>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-3xl font-bold text-primary">65€</div>
+                            <div class="text-sm text-gray-600">10 Einheiten</div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!-- Info Banner -->
+            <div class="fade-in mt-12 bg-primary/10 border-l-4 border-primary p-6 max-w-4xl mx-auto">
+                <div class="flex items-start">
+                    <svg class="w-6 h-6 text-primary mr-4 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                    </svg>
+                    <div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-2">Wichtige Informationen</h4>
+                        <ul class="space-y-1 text-gray-700">
+                            <li>• Alle Abos sind monatlich kündbar – keine langen Vertragsbindungen</li>
+                            <li>• Probetraining kostenlos nach Vereinbarung</li>
+                            <li>• Personal Training kann zusätzlich zu jedem Abo gebucht werden</li>
+                            <li>• Transponder-Chip wird bei Vertragsabschluss ausgehändigt</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Blog Preview Section -->
+    <section id="blog" class="py-20 lg:py-32 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header -->
+            <div class="text-center mb-16 fade-in">
+                <span class="text-primary font-bold text-sm uppercase tracking-wider">Fitness Blog</span>
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mt-3 mb-6">
+                    Tipps & Wissen
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Bleib auf dem Laufenden mit unseren neuesten Artikeln rund um Training, Ernährung und Lifestyle.
+                </p>
+            </div>
+            
+            <!-- Blog Articles Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                
+                <!-- Article 1 -->
+                <article class="fade-in bg-white overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <a href="blog.html" class="block">
+                        <div class="relative overflow-hidden h-64">
+                            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070" 
+                                 alt="Training" 
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-primary text-white px-3 py-1 text-sm font-semibold">Training</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="text-sm text-gray-500 mb-2">10. November 2025</div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                                Die 5 besten Übungen für Muskelaufbau
+                            </h3>
+                            <p class="text-gray-600 mb-4">
+                                Entdecke die effektivsten Übungen, um schnell und nachhaltig Muskelmasse aufzubauen. 
+                                Von Basics bis zu Profi-Tipps.
+                            </p>
+                            <div class="flex items-center text-primary font-semibold">
+                                Weiterlesen
+                                <svg class="w-5 h-5 ml-1 group-hover:ml-2 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+                
+                <!-- Article 2 -->
+                <article class="fade-in bg-white overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <a href="blog.html" class="block">
+                        <div class="relative overflow-hidden h-64">
+                            <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=2053" 
+                                 alt="Ernährung" 
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-primary text-white px-3 py-1 text-sm font-semibold">Ernährung</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="text-sm text-gray-500 mb-2">5. November 2025</div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                                Protein-Timing: Wann ist der beste Zeitpunkt?
+                            </h3>
+                            <p class="text-gray-600 mb-4">
+                                Die richtige Protein-Aufnahme zur richtigen Zeit kann deine Trainingserfolge maximieren. 
+                                So geht's!
+                            </p>
+                            <div class="flex items-center text-primary font-semibold">
+                                Weiterlesen
+                                <svg class="w-5 h-5 ml-1 group-hover:ml-2 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+                
+                <!-- Article 3 -->
+                <article class="fade-in bg-white overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <a href="blog.html" class="block">
+                        <div class="relative overflow-hidden h-64">
+                            <img src="https://images.unsplash.com/photo-1434682881908-b43d0467b798?q=80&w=2074" 
+                                 alt="Regeneration" 
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-primary text-white px-3 py-1 text-sm font-semibold">Lifestyle</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="text-sm text-gray-500 mb-2">1. November 2025</div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                                Regeneration: Der unterschätzte Faktor
+                            </h3>
+                            <p class="text-gray-600 mb-4">
+                                Warum Erholung genauso wichtig ist wie das Training selbst. 
+                                Tipps für optimale Regeneration.
+                            </p>
+                            <div class="flex items-center text-primary font-semibold">
+                                Weiterlesen
+                                <svg class="w-5 h-5 ml-1 group-hover:ml-2 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+                
+            </div>
+            
+            <!-- Blog CTA -->
+            <div class="fade-in text-center">
+                <a href="blog.html" class="inline-block bg-primary hover:bg-primary-dark text-white px-8 py-3 font-semibold transition-all duration-300 transform hover:scale-105">
+                    Alle Artikel ansehen
+                </a>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Kontakt Section -->
+    <section id="contact" class="py-20 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header -->
+            <div class="text-center mb-16 fade-in">
+                <span class="text-primary font-bold text-sm uppercase tracking-wider">Kontakt</span>
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mt-3 mb-6">
+                    Wir freuen uns auf dich!
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Hast du Fragen oder möchtest ein Probetraining vereinbaren? Melde dich bei uns!
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Kontaktformular -->
+                <div class="fade-in">
+                    <div class="bg-gray-50 p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Nachricht senden</h3>
+                        <form onsubmit="handleContactForm(event)" class="space-y-5">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Name *</label>
+                                <input type="text" name="name" required
+                                       class="w-full px-4 py-3 border border-gray-300 focus:border-primary focus:outline-none transition-colors"
+                                       placeholder="Max Mustermann">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">E-Mail *</label>
+                                <input type="email" name="email" required
+                                       class="w-full px-4 py-3 border border-gray-300 focus:border-primary focus:outline-none transition-colors"
+                                       placeholder="max@example.com">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Telefon</label>
+                                <input type="tel" name="phone"
+                                       class="w-full px-4 py-3 border border-gray-300 focus:border-primary focus:outline-none transition-colors"
+                                       placeholder="+49 170 1234567">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Betreff *</label>
+                                <select name="subject" required
+                                        class="w-full px-4 py-3 border border-gray-300 focus:border-primary focus:outline-none transition-colors">
+                                    <option value="">Bitte auswählen</option>
+                                    <option value="probetraining">Probetraining</option>
+                                    <option value="mitgliedschaft">Mitgliedschaft</option>
+                                    <option value="personal-training">Personal Training</option>
+                                    <option value="allgemein">Allgemeine Anfrage</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Nachricht *</label>
+                                <textarea name="message" rows="5" required
+                                          class="w-full px-4 py-3 border border-gray-300 focus:border-primary focus:outline-none transition-colors"
+                                          placeholder="Deine Nachricht..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white py-4 font-bold transition-all duration-300 transform hover:scale-105">
+                                Nachricht senden
+                            </button>
+                            <p class="text-sm text-gray-600 text-center">* Pflichtfelder</p>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Kontaktinformationen & Map -->
+                <div class="fade-in space-y-8">
+                    
+                    <!-- Kontaktdaten -->
+                    <div class="space-y-6">
+                        
+                        <!-- Adresse -->
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-gray-900 mb-1">Adresse</h4>
+                                <p class="text-gray-700">Hauptstraße 42</p>
+                                <p class="text-gray-700">06667 Würchwitz</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Telefon -->
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                </svg>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-gray-900 mb-1">Telefon</h4>
+                                <a href="tel:+4934445123 45" class="text-gray-700 hover:text-primary transition-colors">
+                                    +49 34445 12345
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- E-Mail -->
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-gray-900 mb-1">E-Mail</h4>
+                                <a href="mailto:info@sportstudio-thielen.de" class="text-gray-700 hover:text-primary transition-colors">
+                                    info@sportstudio-thielen.de
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- WhatsApp -->
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                                </svg>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-gray-900 mb-1">WhatsApp</h4>
+                                <a href="https://wa.me/491701234567" class="text-gray-700 hover:text-primary transition-colors">
+                                    +49 170 1234567
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Öffnungszeiten -->
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-gray-900 mb-1">Öffnungszeiten</h4>
+                                <p class="text-gray-700">Täglich: 06:00 - 22:00 Uhr</p>
+                                <p class="text-sm text-gray-600 mt-1">(Chip-Zugang / Transponder)</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- Google Maps -->
+                    <div class="h-80 w-full bg-gray-200 relative overflow-hidden">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.540944819356!2d11.7890!3d51.1510!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDA5JzAzLjYiTiAxMcKwNDcnMjAuNCJF!5e0!3m2!1sde!2sde!4v1234567890"
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            class="absolute inset-0">
+                        </iframe>
+                    </div>
+                    
+                    <!-- Parkplatz Info -->
+                    <div class="bg-primary/10 border-l-4 border-primary p-4">
+                        <div class="flex items-start">
+                            <svg class="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                            </svg>
+                            <div class="text-sm text-gray-700">
+                                <p class="font-semibold mb-1">Hinweise zur Anfahrt:</p>
+                                <p>• Ca. 10 Parkplätze direkt vor Ort (immer verfügbar)</p>
+                                <p>• Zugang über Außentreppe (nicht barrierefrei)</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                
+                <!-- Logo & Beschreibung -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <svg class="w-10 h-10 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z"/>
+                        </svg>
+                        <div class="flex flex-col">
+                            <span class="text-lg font-bold">Sportstudio Thielen</span>
+                            <span class="text-xs text-gray-400 font-medium">OLDSCHOOL GYM</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">
+                        Dein Oldschool Gym mit familiärer Atmosphäre in Würchwitz. 
+                        Authentisches Training seit Jahren.
+                    </p>
+                    
+                    <!-- Google Reviews Badge -->
+                    <div class="bg-white/10 p-3 rounded inline-block">
+                        <div class="flex items-center space-x-2">
+                            <span class="text-2xl font-bold text-white">4.8</span>
+                            <div>
+                                <div class="flex space-x-0.5 mb-1">
+                                    <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                </div>
+                                <p class="text-xs text-gray-400">Google Bewertungen</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-primary transition-colors">Startseite</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-primary transition-colors">Über uns</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-primary transition-colors">Leistungen</a></li>
+                        <li><a href="#prices" class="text-gray-400 hover:text-primary transition-colors">Preise</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-primary transition-colors">Blog</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-primary transition-colors">Kontakt</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Kontakt -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Kontakt</h3>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li>Hauptstraße 42</li>
+                        <li>06667 Würchwitz</li>
+                        <li class="pt-2">
+                            <a href="tel:+493444512345" class="hover:text-primary transition-colors">
+                                +49 34445 12345
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:info@sportstudio-thielen.de" class="hover:text-primary transition-colors">
+                                info@sportstudio-thielen.de
+                            </a>
+                        </li>
+                        <li class="pt-2 font-semibold text-white">
+                            Täglich 6-22 Uhr
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Social Media & Verein -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Folge uns</h3>
+                    <div class="flex space-x-4 mb-6">
+                        <a href="https://facebook.com/sportstudio.thielen" target="_blank" rel="noopener" 
+                           class="w-10 h-10 bg-white/10 hover:bg-primary flex items-center justify-center transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com/sportstudio_thielen" target="_blank" rel="noopener"
+                           class="w-10 h-10 bg-white/10 hover:bg-primary flex items-center justify-center transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <div class="pt-4">
+                        <h4 class="text-sm font-semibold mb-2 text-gray-400">Vereins-Website</h4>
+                        <a href="https://verein-web.de" target="_blank" rel="noopener" 
+                           class="text-primary hover:text-primary-light transition-colors text-sm">
+                            verein-web.de →
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <div class="text-gray-400 text-sm">
+                        © 2025 Sportstudio Thielen. Alle Rechte vorbehalten.
+                    </div>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="impressum.html" class="text-gray-400 hover:text-primary transition-colors">Impressum</a>
+                        <a href="datenschutz.html" class="text-gray-400 hover:text-primary transition-colors">Datenschutz</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!-- JavaScript -->
     <script src="script.js"></script>
