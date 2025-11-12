@@ -103,3 +103,40 @@ function handleTrainerContact(event) {
         document.body.style.overflow = 'auto';
     }
 }
+
+// Preise Toggle zwischen Abos und Tageskarten
+function togglePrices() {
+    const aboCards = document.getElementById('abo-cards');
+    const cardsSection = document.getElementById('cards-section');
+    const toggleDot = document.getElementById('toggle-dot');
+    const toggleBtn = document.getElementById('price-toggle');
+    const aboLabel = document.getElementById('abo-label');
+    const cardsLabel = document.getElementById('cards-label');
+    
+    // Toggle visibility
+    if (aboCards.classList.contains('grid')) {
+        // Switch to Tageskarten
+        aboCards.classList.remove('grid');
+        aboCards.classList.add('hidden');
+        cardsSection.classList.remove('hidden');
+        cardsSection.classList.add('grid');
+        toggleDot.style.transform = 'translateX(32px)';
+        toggleBtn.classList.add('bg-primary-dark');
+        aboLabel.classList.remove('text-primary');
+        aboLabel.classList.add('text-gray-500');
+        cardsLabel.classList.remove('text-gray-500');
+        cardsLabel.classList.add('text-primary');
+    } else {
+        // Switch to Abos
+        cardsSection.classList.remove('grid');
+        cardsSection.classList.add('hidden');
+        aboCards.classList.remove('hidden');
+        aboCards.classList.add('grid');
+        toggleDot.style.transform = 'translateX(0)';
+        toggleBtn.classList.remove('bg-primary-dark');
+        cardsLabel.classList.remove('text-primary');
+        cardsLabel.classList.add('text-gray-500');
+        aboLabel.classList.remove('text-gray-500');
+        aboLabel.classList.add('text-primary');
+    }
+}
