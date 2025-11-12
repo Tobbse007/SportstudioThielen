@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sportstudio Thielen - Dein Oldschool Gym mit familiärer Atmosphäre in Würchwitz. Moderne Ausstattung, faire Preise, persönliche Betreuung.">
+    <title>Sportstudio Thielen - Oldschool Gym</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#2563eb',
+                            dark: '#1e40af',
+                            light: '#3b82f6'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.9) 0%, rgba(30, 64, 175, 0.85) 100%),
+                        url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070') center/cover no-repeat;
+        }
+        
+        .nav-shadow {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 bg-white z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <svg class="w-10 h-10 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z"/>
+                    </svg>
+                    <div class="flex flex-col">
+                        <span class="text-xl font-bold text-gray-900">Sportstudio Thielen</span>
+                        <span class="text-xs text-gray-600 font-medium">OLDSCHOOL GYM</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-primary font-medium transition-colors">Startseite</a>
+                    <a href="#about" class="text-gray-700 hover:text-primary font-medium transition-colors">Über uns</a>
+                    <a href="#prices" class="text-gray-700 hover:text-primary font-medium transition-colors">Preise</a>
+                    <a href="blog.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Blog</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary font-medium transition-colors">Kontakt</a>
+                    <a href="#contact" class="bg-primary hover:bg-primary-dark text-white px-6 py-2.5 font-semibold transition-all duration-300 transform hover:scale-105">
+                        Mitglied werden
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700 focus:outline-none">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#home" class="block text-gray-700 hover:text-primary font-medium py-2 transition-colors">Startseite</a>
+                <a href="#about" class="block text-gray-700 hover:text-primary font-medium py-2 transition-colors">Über uns</a>
+                <a href="#prices" class="block text-gray-700 hover:text-primary font-medium py-2 transition-colors">Preise</a>
+                <a href="blog.html" class="block text-gray-700 hover:text-primary font-medium py-2 transition-colors">Blog</a>
+                <a href="#contact" class="block text-gray-700 hover:text-primary font-medium py-2 transition-colors">Kontakt</a>
+                <a href="#contact" class="block bg-primary hover:bg-primary-dark text-white text-center px-6 py-2.5 font-semibold transition-all">
+                    Mitglied werden
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+            <div class="space-y-8">
+                <!-- Badge -->
+                <div class="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
+                    <span class="text-white font-medium">🏋️ Authentisches Training seit Jahren</span>
+                </div>
+                
+                <!-- Main Heading -->
+                <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight">
+                    Dein Oldschool Gym<br>
+                    <span class="text-white/90">mit familiärer Atmosphäre</span>
+                </h1>
+                
+                <!-- Subheading -->
+                <p class="text-lg sm:text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto font-light">
+                    Robuste Geräte, echte Community und pure Power.<br class="hidden sm:block">
+                    Trainiere in entspannter Atmosphäre ohne Schnickschnack.
+                </p>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
+                    <a href="#contact" class="w-full sm:w-auto bg-white text-primary hover:bg-gray-100 px-8 py-4 text-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        Jetzt Mitglied werden
+                    </a>
+                    <a href="#about" class="w-full sm:w-auto border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-4 text-lg font-bold transition-all duration-300">
+                        Mehr erfahren
+                    </a>
+                </div>
+                
+                <!-- Quick Info -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-12 max-w-3xl mx-auto">
+                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+                        <div class="text-3xl font-bold text-white">6-22 Uhr</div>
+                        <div class="text-white/80 font-medium mt-1">Täglich geöffnet</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+                        <div class="text-3xl font-bold text-white">ab 25€</div>
+                        <div class="text-white/80 font-medium mt-1">Pro Monat</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+                        <div class="text-3xl font-bold text-white">4.8 ⭐</div>
+                        <div class="text-white/80 font-medium mt-1">Google Bewertung</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Über uns Section -->
+    <section id="about" class="py-20 lg:py-32 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                
+                <!-- Text Content -->
+                <div class="fade-in space-y-6">
+                    <div>
+                        <span class="text-primary font-bold text-sm uppercase tracking-wider">Über uns</span>
+                        <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mt-3 mb-6">
+                            Willkommen im Sportstudio Thielen
+                        </h2>
+                    </div>
+                    
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Bei uns erlebst du echtes Oldschool-Training in einer <strong>familiären Atmosphäre</strong>, 
+                        wo man sich noch kennt und gegenseitig motiviert. Kein unangenehmes Gefühl, keine Blicke – 
+                        nur pure Konzentration auf dein Training.
+                    </p>
+                    
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Wir setzen auf <strong>robuste, funktionale Ausstattung</strong> ohne Schnickschnack. 
+                        Bei uns findest du die Geräte, die wirklich zählen – gebaut für echte Kraftsportler 
+                        und alle, die es werden wollen.
+                    </p>
+                    
+                    <!-- Besonderheiten -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6">
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-6 h-6 text-primary flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Oldschool-Atmosphäre</h3>
+                                <p class="text-gray-600 text-sm">Authentisches Gym-Feeling</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-6 h-6 text-primary flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Familiäre Community</h3>
+                                <p class="text-gray-600 text-sm">Man kennt sich hier</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-6 h-6 text-primary flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Entspannte Atmosphäre</h3>
+                                <p class="text-gray-600 text-sm">Kein unangenehmes Gefühl</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-6 h-6 text-primary flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Robuste Ausstattung</h3>
+                                <p class="text-gray-600 text-sm">Funktional und kraftvoll</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pt-6">
+                        <a href="#contact" class="inline-block bg-primary hover:bg-primary-dark text-white px-8 py-3 font-semibold transition-all duration-300 transform hover:scale-105">
+                            Probetraining vereinbaren
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Image -->
+                <div class="fade-in">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070" 
+                             alt="Gym Training" 
+                             class="w-full h-[500px] object-cover shadow-2xl">
+                        
+                        <!-- Stats Overlay -->
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8">
+                            <div class="grid grid-cols-3 gap-4 text-center text-white">
+                                <div>
+                                    <div class="text-3xl font-bold">15+</div>
+                                    <div class="text-sm opacity-90">Jahre Erfahrung</div>
+                                </div>
+                                <div>
+                                    <div class="text-3xl font-bold">200+</div>
+                                    <div class="text-sm opacity-90">Zufriedene Mitglieder</div>
+                                </div>
+                                <div>
+                                    <div class="text-3xl font-bold">24/7</div>
+                                    <div class="text-sm opacity-90">Chip-Zugang</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header -->
+            <div class="text-center mb-16 fade-in">
+                <span class="text-primary font-bold text-sm uppercase tracking-wider">Unsere Leistungen</span>
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mt-3 mb-6">
+                    Was wir dir bieten
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Moderne Ausstattung trifft auf Oldschool-Atmosphäre. Entdecke alle Vorteile deines Trainings bei uns.
+                </p>
+            </div>
+            
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Service 1: Duschen & Umkleiden -->
+                <div class="fade-in bg-gray-50 p-8 hover:shadow-xl transition-all duration-300 group cursor-pointer" onclick="openPopup('popup-duschen')">
+                    <div class="w-16 h-16 bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
+                        <svg class="w-8 h-8 text-primary group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Moderne Duschen & Umkleiden</h3>
+                    <p class="text-gray-600 mb-6">Saubere, geräumige Umkleiden mit Schließfächern für deine Wertsachen.</p>
+                    <button class="text-primary font-semibold flex items-center group-hover:gap-2 transition-all">
+                        Mehr erfahren
+                        <svg class="w-5 h-5 ml-1 group-hover:ml-2 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Service 2: Flexible Trainingszeiten -->
+                <div class="fade-in bg-gray-50 p-8 hover:shadow-xl transition-all duration-300 group cursor-pointer" onclick="openPopup('popup-zeiten')">
+                    <div class="w-16 h-16 bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
+                        <svg class="w-8 h-8 text-primary group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Trainiere jederzeit</h3>
+                    <p class="text-gray-600 mb-6">Täglich von 6-22 Uhr geöffnet. Trainiere so lange du willst, wann du willst.</p>
+                    <button class="text-primary font-semibold flex items-center group-hover:gap-2 transition-all">
+                        Mehr erfahren
+                        <svg class="w-5 h-5 ml-1 group-hover:ml-2 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Service 3: Getränke & Snacks -->
+                <div class="fade-in bg-gray-50 p-8 hover:shadow-xl transition-all duration-300 group cursor-pointer" onclick="openPopup('popup-getraenke')">
+                    <div class="w-16 h-16 bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
+                        <svg class="w-8 h-8 text-primary group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Erfrischende Getränke & Snacks</h3>
+                    <p class="text-gray-600 mb-6">Perfekte Pause zwischen Trainingseinheiten mit erfrischenden Getränken.</p>
+                    <button class="text-primary font-semibold flex items-center group-hover:gap-2 transition-all">
+                        Mehr erfahren
+                        <svg class="w-5 h-5 ml-1 group-hover:ml-2 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Service 4: Transponder-System -->
+                <div class="fade-in bg-gray-50 p-8 hover:shadow-xl transition-all duration-300 group cursor-pointer" onclick="openPopup('popup-zugang')">
+                    <div class="w-16 h-16 bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
+                        <svg class="w-8 h-8 text-primary group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Zugang zum Gym</h3>
+                    <p class="text-gray-600 mb-6">Modernes Transponder-System für einfachen und sicheren Zugang rund um die Uhr.</p>
+                    <button class="text-primary font-semibold flex items-center group-hover:gap-2 transition-all">
+                        Mehr erfahren
+                        <svg class="w-5 h-5 ml-1 group-hover:ml-2 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Service 5: Oldschool-Ausstattung -->
+                <div class="fade-in bg-gray-50 p-8 hover:shadow-xl transition-all duration-300 group cursor-pointer" onclick="openPopup('popup-ausstattung')">
+                    <div class="w-16 h-16 bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
+                        <svg class="w-8 h-8 text-primary group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Oldschool-Ausstattung</h3>
+                    <p class="text-gray-600 mb-6">Robuste Geräte für echte Power. Keine Spielereien, nur das Wesentliche.</p>
+                    <button class="text-primary font-semibold flex items-center group-hover:gap-2 transition-all">
+                        Mehr erfahren
+                        <svg class="w-5 h-5 ml-1 group-hover:ml-2 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Service 6: Faire Preise -->
+                <div class="fade-in bg-gray-50 p-8 hover:shadow-xl transition-all duration-300 group cursor-pointer" onclick="openPopup('popup-preise')">
+                    <div class="w-16 h-16 bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
+                        <svg class="w-8 h-8 text-primary group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Fair & Flexible Preise</h3>
+                    <p class="text-gray-600 mb-6">Monatliche Mitgliedschaften ohne lange Vertragsbindung. Ab 25€ pro Monat.</p>
+                    <button class="text-primary font-semibold flex items-center group-hover:gap-2 transition-all">
+                        Mehr erfahren
+                        <svg class="w-5 h-5 ml-1 group-hover:ml-2 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Pop-ups -->
+    <!-- Pop-up 1: Duschen -->
+    <div id="popup-duschen" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 popup-overlay">
+        <div class="bg-white max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070" alt="Moderne Duschen" class="w-full h-64 object-cover">
+                <button onclick="closePopup('popup-duschen')" class="absolute top-4 right-4 bg-white/90 hover:bg-white w-10 h-10 flex items-center justify-center transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="p-8">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Moderne Duschen & Umkleiden</h3>
+                <p class="text-gray-700 mb-4 leading-relaxed">
+                    Unsere Umkleidebereiche sind modern ausgestattet und bieten dir alles, was du vor und nach dem Training brauchst:
+                </p>
+                <ul class="space-y-3 mb-6">
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-700">Saubere und geräumige Duschen mit warmem Wasser</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-700">Schließfächer für sichere Aufbewahrung deiner Wertsachen</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-700">Viel Platz zum Umziehen und Vorbereiten</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-700">Regelmäßige Reinigung für höchste Hygiene-Standards</span>
+                    </li>
+                </ul>
+                <button onclick="closePopup('popup-duschen')" class="w-full bg-primary hover:bg-primary-dark text-white py-3 font-semibold transition-colors">
+                    Schließen
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pop-up 2: Trainingszeiten -->
+    <div id="popup-zeiten" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 popup-overlay">
+        <div class="bg-white max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070" alt="Training" class="w-full h-64 object-cover">
+                <button onclick="closePopup('popup-zeiten')" class="absolute top-4 right-4 bg-white/90 hover:bg-white w-10 h-10 flex items-center justify-center transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="p-8">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Trainiere jederzeit</h3>
+                <p class="text-gray-700 mb-4 leading-relaxed">
+                    Dein Leben ist flexibel – dein Training sollte es auch sein. Bei uns trainierst du, wann es dir passt:
+                </p>
+                <ul class="space-y-3 mb-6">
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-700">Täglich von <strong>06:00 - 22:00 Uhr</strong> geöffnet</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-700">Zugang per Transponder-Chip – kein Anstehen, kein Warten</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-700">Trainiere so lange wie du willst – keine Zeitbegrenzung</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-700">Auch an Wochenenden und Feiertagen verfügbar</span>
+                    </li>
+                </ul>
+                <button onclick="closePopup('popup-zeiten')" class="w-full bg-primary hover:bg-primary-dark text-white py-3 font-semibold transition-colors">
+                    Schließen
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pop-up 3: Getränke -->
+    <div id="popup-getraenke" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 popup-overlay">
+        <div class="bg-white max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070" alt="Getränke" class="w-full h-64 object-cover">
+                <button onclick="closePopup('popup-getraenke')" class="absolute top-4 right-4 bg-white/90 hover:bg-white w-10 h-10 flex items-center justify-center transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="p-8">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Erfrischende Getränke & Snacks</h3>
+                <p class="text-gray-700 mb-4 leading-relaxed">
+                    Nach einem intensiven Training brauchst du die richtige Erfrischung. Bei uns findest du:
+                </p>
+                <ul class="space-y-3 mb-6">
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-700">Erfrischende Getränke für zwischendurch</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-700">Protein-Shakes und Fitness-Getränke</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-700">Gesunde Snacks für den kleinen Hunger</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-700">Faire Preise für Mitglieder</span>
+                    </li>
+                </ul>
+                <button onclick="closePopup('popup-getraenke')" class="w-full bg-primary hover:bg-primary-dark text-white py-3 font-semibold transition-colors">
+                    Schließen
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pop-ups 4-6: Zugang, Ausstattung, Preise (gleiche Struktur) -->
+    <div id="popup-zugang" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 popup-overlay">
+        <div class="bg-white max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070" alt="Zugang" class="w-full h-64 object-cover">
+                <button onclick="closePopup('popup-zugang')" class="absolute top-4 right-4 bg-white/90 hover:bg-white w-10 h-10 flex items-center justify-center transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="p-8">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Moderner Transponder-Zugang</h3>
+                <p class="text-gray-700 mb-4 leading-relaxed">
+                    Dein persönlicher Chip-Zugang macht das Training bei uns so einfach wie nie:
+                </p>
+                <ul class="space-y-3 mb-6">
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-700">Einfacher und schneller Zugang per Transponder</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-700">Sicheres System für maximalen Schutz</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-700">Kein Schlüssel vergessen – Chip immer dabei</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-700">Zugang rund um die Uhr (6-22 Uhr)</span>
+                    </li>
+                </ul>
+                <button onclick="closePopup('popup-zugang')" class="w-full bg-primary hover:bg-primary-dark text-white py-3 font-semibold transition-colors">
+                    Schließen
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup-ausstattung" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 popup-overlay">
+        <div class="bg-white max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070" alt="Ausstattung" class="w-full h-64 object-cover">
+                <button onclick="closePopup('popup-ausstattung')" class="absolute top-4 right-4 bg-white/90 hover:bg-white w-10 h-10 flex items-center justify-center transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="p-8">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Oldschool-Ausstattung</h3>
+                <p class="text-gray-700 mb-4 leading-relaxed">
+                    Keine Spielereien, sondern das, was wirklich zählt – robuste und bewährte Trainingsgeräte:
+                </p>
+                <ul class="space-y-3 mb-6">
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-700">Robuste Kraft- und Hantelstationen</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-700">Freihanteln und Langhantel-Bereiche</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-700">Funktionale Cardio-Geräte</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-700">Alles für echte Power und Muskelaufbau</span>
+                    </li>
+                </ul>
+                <button onclick="closePopup('popup-ausstattung')" class="w-full bg-primary hover:bg-primary-dark text-white py-3 font-semibold transition-colors">
+                    Schließen
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup-preise" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 popup-overlay">
+        <div class="bg-white max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070" alt="Preise" class="w-full h-64 object-cover">
+                <button onclick="closePopup('popup-preise')" class="absolute top-4 right-4 bg-white/90 hover:bg-white w-10 h-10 flex items-center justify-center transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="p-8">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Fair & Flexible Preise</h3>
+                <p class="text-gray-700 mb-4 leading-relaxed">
+                    Fitness sollte für jeden zugänglich sein. Deshalb bieten wir dir faire und flexible Preismodelle:
+                </p>
+                <ul class="space-y-3 mb-6">
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-700">Monatliche Mitgliedschaften ab <strong>25€</strong></span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-700">Familien- und Paarangebote verfügbar</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-700">Tageskarten und 10er-Karten für flexible Nutzung</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-700">Keine versteckten Kosten – alles transparent</span>
+                    </li>
+                </ul>
+                <a href="#prices" onclick="closePopup('popup-preise')" class="block w-full bg-primary hover:bg-primary-dark text-white py-3 font-semibold transition-colors text-center">
+                    Alle Preise ansehen
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Trainer Section -->
+    <section id="trainers" class="py-20 lg:py-32 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header -->
+            <div class="text-center mb-16 fade-in">
+                <span class="text-primary font-bold text-sm uppercase tracking-wider">Unsere Trainer</span>
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mt-3 mb-6">
+                    Professionelle Betreuung
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Unsere erfahrenen Trainer unterstützen dich bei deinen Fitnesszielen – vom Muskelaufbau bis zur Ernährungsberatung.
+                </p>
+            </div>
+            
+            <!-- Trainer Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
+                
+                <!-- Trainer 1: Max -->
+                <div class="fade-in bg-white overflow-hidden hover:shadow-2xl transition-all duration-300 group cursor-pointer" onclick="openPopup('popup-trainer-max')">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=2070" 
+                             alt="Trainer Max" 
+                             class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <h3 class="text-2xl font-bold mb-1">Max Mustermann</h3>
+                            <p class="text-white/90">Personal Trainer & Kraftsport-Experte</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-700 mb-4">
+                            Spezialist für Muskelaufbau und Krafttraining mit über 10 Jahren Erfahrung. 
+                            Max hilft dir, deine Ziele zu erreichen.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-primary/10 text-primary px-3 py-1 text-sm font-medium">Krafttraining</span>
+                            <span class="bg-primary/10 text-primary px-3 py-1 text-sm font-medium">Muskelaufbau</span>
+                            <span class="bg-primary/10 text-primary px-3 py-1 text-sm font-medium">Bodybuilding</span>
+                        </div>
+                        <button class="text-primary font-semibold flex items-center group-hover:gap-2 transition-all">
+                            Profil ansehen & Kontaktieren
+                            <svg class="w-5 h-5 ml-1 group-hover:ml-2 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Trainer 2: Sarah -->
+                <div class="fade-in bg-white overflow-hidden hover:shadow-2xl transition-all duration-300 group cursor-pointer" onclick="openPopup('popup-trainer-sarah')">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=2070" 
+                             alt="Trainerin Sarah" 
+                             class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <h3 class="text-2xl font-bold mb-1">Sarah Schmidt</h3>
+                            <p class="text-white/90">Personal Trainerin & Ernährungsberaterin</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-700 mb-4">
+                            Expertin für funktionales Training und ganzheitliche Ernährungsberatung. 
+                            Sarah begleitet dich auf deinem Weg.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-primary/10 text-primary px-3 py-1 text-sm font-medium">Ernährung</span>
+                            <span class="bg-primary/10 text-primary px-3 py-1 text-sm font-medium">Abnehmen</span>
+                            <span class="bg-primary/10 text-primary px-3 py-1 text-sm font-medium">Funktional</span>
+                        </div>
+                        <button class="text-primary font-semibold flex items-center group-hover:gap-2 transition-all">
+                            Profil ansehen & Kontaktieren
+                            <svg class="w-5 h-5 ml-1 group-hover:ml-2 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Trainer Pop-ups -->
+    <!-- Pop-up Trainer Max -->
+    <div id="popup-trainer-max" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 popup-overlay">
+        <div class="bg-white max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=2070" alt="Trainer Max" class="w-full h-80 object-cover">
+                <button onclick="closePopup('popup-trainer-max')" class="absolute top-4 right-4 bg-white/90 hover:bg-white w-10 h-10 flex items-center justify-center transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="p-8">
+                <div class="flex items-start justify-between mb-6">
+                    <div>
+                        <h3 class="text-3xl font-bold text-gray-900 mb-2">Max Mustermann</h3>
+                        <p class="text-xl text-primary font-semibold">Personal Trainer & Kraftsport-Experte</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-3">Über Max</h4>
+                        <p class="text-gray-700 leading-relaxed">
+                            Mit über 10 Jahren Erfahrung im Kraftsport und Bodybuilding weiß Max genau, 
+                            wie du deine Ziele erreichst. Seine Philosophie: Harte Arbeit zahlt sich aus, 
+                            aber nur mit dem richtigen Plan. Er erstellt individuelle Trainingspläne und 
+                            begleitet dich Schritt für Schritt zu deinem Traumkörper.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-3">Spezialisierungen</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-primary text-white px-4 py-2 font-medium">Krafttraining</span>
+                            <span class="bg-primary text-white px-4 py-2 font-medium">Muskelaufbau</span>
+                            <span class="bg-primary text-white px-4 py-2 font-medium">Bodybuilding</span>
+                            <span class="bg-primary text-white px-4 py-2 font-medium">Trainingsplanung</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-3">Personal Training Pakete</h4>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center p-4 bg-gray-50">
+                                <div>
+                                    <p class="font-semibold text-gray-900">Einzelstunde</p>
+                                    <p class="text-sm text-gray-600">60 Minuten individuelles Training</p>
+                                </div>
+                                <span class="text-2xl font-bold text-primary">45€</span>
+                            </div>
+                            <div class="flex justify-between items-center p-4 bg-gray-50">
+                                <div>
+                                    <p class="font-semibold text-gray-900">5er-Paket</p>
+                                    <p class="text-sm text-gray-600">5 Trainingseinheiten à 60 Minuten</p>
+                                </div>
+                                <span class="text-2xl font-bold text-primary">200€</span>
+                            </div>
+                            <div class="flex justify-between items-center p-4 bg-gray-50">
+                                <div>
+                                    <p class="font-semibold text-gray-900">10er-Paket</p>
+                                    <p class="text-sm text-gray-600">10 Trainingseinheiten à 60 Minuten</p>
+                                </div>
+                                <span class="text-2xl font-bold text-primary">380€</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="border-t pt-6">
+                        <h4 class="text-lg font-bold text-gray-900 mb-4">Jetzt Termin vereinbaren</h4>
+                        <form onsubmit="handleTrainerContact(event)" class="space-y-4">
+                            <input type="hidden" name="trainer" value="Max Mustermann">
+                            <div>
+                                <input type="text" name="name" placeholder="Dein Name" required
+                                       class="w-full px-4 py-3 border border-gray-300 focus:border-primary focus:outline-none">
+                            </div>
+                            <div>
+                                <input type="email" name="email" placeholder="Deine E-Mail" required
+                                       class="w-full px-4 py-3 border border-gray-300 focus:border-primary focus:outline-none">
+                            </div>
+                            <div>
+                                <input type="tel" name="phone" placeholder="Telefon (optional)"
+                                       class="w-full px-4 py-3 border border-gray-300 focus:border-primary focus:outline-none">
+                            </div>
+                            <div>
+                                <textarea name="message" rows="4" placeholder="Deine Nachricht / Ziele" required
+                                          class="w-full px-4 py-3 border border-gray-300 focus:border-primary focus:outline-none"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white py-3 font-semibold transition-colors">
+                                Anfrage senden
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pop-up Trainerin Sarah -->
+    <div id="popup-trainer-sarah" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 popup-overlay">
+        <div class="bg-white max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=2070" alt="Trainerin Sarah" class="w-full h-80 object-cover">
+                <button onclick="closePopup('popup-trainer-sarah')" class="absolute top-4 right-4 bg-white/90 hover:bg-white w-10 h-10 flex items-center justify-center transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="p-8">
+                <div class="flex items-start justify-between mb-6">
+                    <div>
+                        <h3 class="text-3xl font-bold text-gray-900 mb-2">Sarah Schmidt</h3>
+                        <p class="text-xl text-primary font-semibold">Personal Trainerin & Ernährungsberaterin</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-3">Über Sarah</h4>
+                        <p class="text-gray-700 leading-relaxed">
+                            Sarah verbindet Training und Ernährung zu einem ganzheitlichen Konzept. 
+                            Als zertifizierte Ernährungsberaterin und Personal Trainerin hilft sie dir nicht nur 
+                            beim Training, sondern zeigt dir auch, wie du durch die richtige Ernährung deine Ziele 
+                            schneller erreichst. Ihr Motto: Gesund, nachhaltig und mit Freude zum Erfolg!
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-3">Spezialisierungen</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-primary text-white px-4 py-2 font-medium">Ernährungsberatung</span>
+                            <span class="bg-primary text-white px-4 py-2 font-medium">Abnehmen</span>
+                            <span class="bg-primary text-white px-4 py-2 font-medium">Funktionales Training</span>
+                            <span class="bg-primary text-white px-4 py-2 font-medium">Körperanalyse</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-3">Personal Training & Beratung</h4>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center p-4 bg-gray-50">
+                                <div>
+                                    <p class="font-semibold text-gray-900">Einzelstunde Training</p>
+                                    <p class="text-sm text-gray-600">60 Minuten individuelles Training</p>
+                                </div>
+                                <span class="text-2xl font-bold text-primary">45€</span>
+                            </div>
+                            <div class="flex justify-between items-center p-4 bg-gray-50">
+                                <div>
+                                    <p class="font-semibold text-gray-900">Ernährungsberatung</p>
+                                    <p class="text-sm text-gray-600">Einzelberatung inkl. Ernährungsplan</p>
+                                </div>
+                                <span class="text-2xl font-bold text-primary">60€</span>
+                            </div>
+                            <div class="flex justify-between items-center p-4 bg-gray-50">
+                                <div>
+                                    <p class="font-semibold text-gray-900">Komplett-Paket</p>
+                                    <p class="text-sm text-gray-600">5x Training + Ernährungsplan</p>
+                                </div>
+                                <span class="text-2xl font-bold text-primary">250€</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="border-t pt-6">
+                        <h4 class="text-lg font-bold text-gray-900 mb-4">Jetzt Termin vereinbaren</h4>
+                        <form onsubmit="handleTrainerContact(event)" class="space-y-4">
+                            <input type="hidden" name="trainer" value="Sarah Schmidt">
+                            <div>
+                                <input type="text" name="name" placeholder="Dein Name" required
+                                       class="w-full px-4 py-3 border border-gray-300 focus:border-primary focus:outline-none">
+                            </div>
+                            <div>
+                                <input type="email" name="email" placeholder="Deine E-Mail" required
+                                       class="w-full px-4 py-3 border border-gray-300 focus:border-primary focus:outline-none">
+                            </div>
+                            <div>
+                                <input type="tel" name="phone" placeholder="Telefon (optional)"
+                                       class="w-full px-4 py-3 border border-gray-300 focus:border-primary focus:outline-none">
+                            </div>
+                            <div>
+                                <textarea name="message" rows="4" placeholder="Deine Nachricht / Ziele" required
+                                          class="w-full px-4 py-3 border border-gray-300 focus:border-primary focus:outline-none"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white py-3 font-semibold transition-colors">
+                                Anfrage senden
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Placeholder for weitere Sections -->
+    <!-- Preise Section kommt hier -->
+    <!-- Blog Preview Section kommt hier -->
+    <!-- Kontakt Section kommt hier -->
+    <!-- Footer kommt hier -->
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
