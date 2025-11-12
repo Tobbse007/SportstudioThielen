@@ -14,17 +14,27 @@ mobileLinks.forEach(link => {
     });
 });
 
-// Navbar scroll effect
+// Navbar scroll effect - hide on scroll down, show on scroll up
 const navbar = document.getElementById('navbar');
 let lastScroll = 0;
 
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
     
+    // Add shadow when scrolled
     if (currentScroll > 50) {
         navbar.classList.add('nav-shadow');
     } else {
         navbar.classList.remove('nav-shadow');
+    }
+    
+    // Hide/show navbar based on scroll direction
+    if (currentScroll > lastScroll && currentScroll > 100) {
+        // Scrolling down & past 100px - hide navbar
+        navbar.style.transform = 'translateY(-100%)';
+    } else {
+        // Scrolling up - show navbar
+        navbar.style.transform = 'translateY(0)';
     }
     
     lastScroll = currentScroll;

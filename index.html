@@ -63,12 +63,22 @@
         html {
             scroll-behavior: smooth;
         }
+        
+        /* Better button hover */
+        .btn-hover-scale:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Smoother card hover */
+        .card-hover:hover {
+            transform: translateY(-8px);
+        }
     </style>
 </head>
 <body class="bg-white text-gray-900">
 
     <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 left-0 right-0 bg-white z-50 transition-all duration-300">
+    <nav id="navbar" class="fixed top-0 left-0 right-0 bg-white z-50 transition-all duration-500">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 
@@ -83,13 +93,17 @@
                     </div>
                 </div>
 
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8">
+                <!-- Desktop Menu - Centered -->
+                <div class="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
                     <a href="#home" class="text-gray-700 hover:text-primary font-medium transition-colors">Startseite</a>
                     <a href="#about" class="text-gray-700 hover:text-primary font-medium transition-colors">Über uns</a>
                     <a href="#prices" class="text-gray-700 hover:text-primary font-medium transition-colors">Preise</a>
                     <a href="blog.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Blog</a>
                     <a href="#contact" class="text-gray-700 hover:text-primary font-medium transition-colors">Kontakt</a>
+                </div>
+
+                <!-- CTA Button - Right -->
+                <div class="hidden md:block">
                     <a href="#contact" class="bg-primary hover:bg-primary-dark text-white px-6 py-2.5 font-semibold transition-all duration-300 transform hover:scale-105">
                         Mitglied werden
                     </a>
@@ -122,48 +136,21 @@
     <!-- Hero Section -->
     <section id="home" class="hero-bg min-h-screen flex items-center justify-center pt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
-            <div class="space-y-8">
-                <!-- Badge -->
-                <div class="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
-                    <span class="text-white font-medium">🏋️ Authentisches Training seit Jahren</span>
-                </div>
-                
+            <div class="space-y-10">
                 <!-- Main Heading -->
-                <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight">
+                <h1 class="text-5xl sm:text-6xl lg:text-8xl font-bold text-white leading-tight drop-shadow-2xl">
                     Dein Oldschool Gym<br>
-                    <span class="text-white/90">mit familiärer Atmosphäre</span>
+                    <span class="text-white/95">mit familiärer Atmosphäre</span>
                 </h1>
                 
-                <!-- Subheading -->
-                <p class="text-lg sm:text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto font-light">
-                    Robuste Geräte, echte Community und pure Power.<br class="hidden sm:block">
-                    Trainiere in entspannter Atmosphäre ohne Schnickschnack.
-                </p>
-                
                 <!-- CTA Buttons -->
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
-                    <a href="#contact" class="w-full sm:w-auto bg-white text-primary hover:bg-gray-100 px-8 py-4 text-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-5 pt-6">
+                    <a href="#contact" class="w-full sm:w-auto bg-white text-primary hover:bg-gray-100 px-10 py-5 text-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-2xl">
                         Jetzt Mitglied werden
                     </a>
-                    <a href="#about" class="w-full sm:w-auto border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-4 text-lg font-bold transition-all duration-300">
+                    <a href="#about" class="w-full sm:w-auto border-3 border-white text-white hover:bg-white hover:text-primary px-10 py-5 text-xl font-bold transition-all duration-300 shadow-2xl">
                         Mehr erfahren
                     </a>
-                </div>
-                
-                <!-- Quick Info -->
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-12 max-w-3xl mx-auto">
-                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
-                        <div class="text-3xl font-bold text-white">6-22 Uhr</div>
-                        <div class="text-white/80 font-medium mt-1">Täglich geöffnet</div>
-                    </div>
-                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
-                        <div class="text-3xl font-bold text-white">ab 25€</div>
-                        <div class="text-white/80 font-medium mt-1">Pro Monat</div>
-                    </div>
-                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
-                        <div class="text-3xl font-bold text-white">4.8 ⭐</div>
-                        <div class="text-white/80 font-medium mt-1">Google Bewertung</div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -294,7 +281,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <!-- Service 1: Duschen & Umkleiden -->
-                <div class="fade-in bg-gray-50 p-8 hover:shadow-xl transition-all duration-300 group cursor-pointer" onclick="openPopup('popup-duschen')">
+                <div class="fade-in bg-gray-50 p-8 hover:shadow-2xl transition-all duration-300 group cursor-pointer transform hover:-translate-y-2" onclick="openPopup('popup-duschen')">
                     <div class="w-16 h-16 bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
                         <svg class="w-8 h-8 text-primary group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
@@ -311,7 +298,7 @@
                 </div>
                 
                 <!-- Service 2: Flexible Trainingszeiten -->
-                <div class="fade-in bg-gray-50 p-8 hover:shadow-xl transition-all duration-300 group cursor-pointer" onclick="openPopup('popup-zeiten')">
+                <div class="fade-in bg-gray-50 p-8 hover:shadow-2xl transition-all duration-300 group cursor-pointer transform hover:-translate-y-2" onclick="openPopup('popup-zeiten')">
                     <div class="w-16 h-16 bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
                         <svg class="w-8 h-8 text-primary group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -328,7 +315,7 @@
                 </div>
                 
                 <!-- Service 3: Getränke & Snacks -->
-                <div class="fade-in bg-gray-50 p-8 hover:shadow-xl transition-all duration-300 group cursor-pointer" onclick="openPopup('popup-getraenke')">
+                <div class="fade-in bg-gray-50 p-8 hover:shadow-2xl transition-all duration-300 group cursor-pointer transform hover:-translate-y-2" onclick="openPopup('popup-getraenke')">
                     <div class="w-16 h-16 bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
                         <svg class="w-8 h-8 text-primary group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
@@ -345,7 +332,7 @@
                 </div>
                 
                 <!-- Service 4: Transponder-System -->
-                <div class="fade-in bg-gray-50 p-8 hover:shadow-xl transition-all duration-300 group cursor-pointer" onclick="openPopup('popup-zugang')">
+                <div class="fade-in bg-gray-50 p-8 hover:shadow-2xl transition-all duration-300 group cursor-pointer transform hover:-translate-y-2" onclick="openPopup('popup-zugang')">
                     <div class="w-16 h-16 bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
                         <svg class="w-8 h-8 text-primary group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path>
@@ -362,7 +349,7 @@
                 </div>
                 
                 <!-- Service 5: Oldschool-Ausstattung -->
-                <div class="fade-in bg-gray-50 p-8 hover:shadow-xl transition-all duration-300 group cursor-pointer" onclick="openPopup('popup-ausstattung')">
+                <div class="fade-in bg-gray-50 p-8 hover:shadow-2xl transition-all duration-300 group cursor-pointer transform hover:-translate-y-2" onclick="openPopup('popup-ausstattung')">
                     <div class="w-16 h-16 bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
                         <svg class="w-8 h-8 text-primary group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z"/>
@@ -379,7 +366,7 @@
                 </div>
                 
                 <!-- Service 6: Faire Preise -->
-                <div class="fade-in bg-gray-50 p-8 hover:shadow-xl transition-all duration-300 group cursor-pointer" onclick="openPopup('popup-preise')">
+                <div class="fade-in bg-gray-50 p-8 hover:shadow-2xl transition-all duration-300 group cursor-pointer transform hover:-translate-y-2" onclick="openPopup('popup-preise')">
                     <div class="w-16 h-16 bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
                         <svg class="w-8 h-8 text-primary group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -402,7 +389,7 @@
     <!-- Service Pop-ups -->
     <!-- Pop-up 1: Duschen -->
     <div id="popup-duschen" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 popup-overlay">
-        <div class="bg-white max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="bg-white max-w-5xl w-full max-h-[90vh] overflow-y-auto">
             <div class="relative">
                 <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070" alt="Moderne Duschen" class="w-full h-64 object-cover">
                 <button onclick="closePopup('popup-duschen')" class="absolute top-4 right-4 bg-white/90 hover:bg-white w-10 h-10 flex items-center justify-center transition-colors">
@@ -451,7 +438,7 @@
 
     <!-- Pop-up 2: Trainingszeiten -->
     <div id="popup-zeiten" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 popup-overlay">
-        <div class="bg-white max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="bg-white max-w-5xl w-full max-h-[90vh] overflow-y-auto">
             <div class="relative">
                 <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070" alt="Training" class="w-full h-64 object-cover">
                 <button onclick="closePopup('popup-zeiten')" class="absolute top-4 right-4 bg-white/90 hover:bg-white w-10 h-10 flex items-center justify-center transition-colors">
@@ -500,7 +487,7 @@
 
     <!-- Pop-up 3: Getränke -->
     <div id="popup-getraenke" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 popup-overlay">
-        <div class="bg-white max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="bg-white max-w-5xl w-full max-h-[90vh] overflow-y-auto">
             <div class="relative">
                 <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070" alt="Getränke" class="w-full h-64 object-cover">
                 <button onclick="closePopup('popup-getraenke')" class="absolute top-4 right-4 bg-white/90 hover:bg-white w-10 h-10 flex items-center justify-center transition-colors">
@@ -549,7 +536,7 @@
 
     <!-- Pop-ups 4-6: Zugang, Ausstattung, Preise (gleiche Struktur) -->
     <div id="popup-zugang" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 popup-overlay">
-        <div class="bg-white max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="bg-white max-w-5xl w-full max-h-[90vh] overflow-y-auto">
             <div class="relative">
                 <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070" alt="Zugang" class="w-full h-64 object-cover">
                 <button onclick="closePopup('popup-zugang')" class="absolute top-4 right-4 bg-white/90 hover:bg-white w-10 h-10 flex items-center justify-center transition-colors">
@@ -597,7 +584,7 @@
     </div>
 
     <div id="popup-ausstattung" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 popup-overlay">
-        <div class="bg-white max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="bg-white max-w-5xl w-full max-h-[90vh] overflow-y-auto">
             <div class="relative">
                 <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070" alt="Ausstattung" class="w-full h-64 object-cover">
                 <button onclick="closePopup('popup-ausstattung')" class="absolute top-4 right-4 bg-white/90 hover:bg-white w-10 h-10 flex items-center justify-center transition-colors">
@@ -645,7 +632,7 @@
     </div>
 
     <div id="popup-preise" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 popup-overlay">
-        <div class="bg-white max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="bg-white max-w-5xl w-full max-h-[90vh] overflow-y-auto">
             <div class="relative">
                 <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070" alt="Preise" class="w-full h-64 object-cover">
                 <button onclick="closePopup('popup-preise')" class="absolute top-4 right-4 bg-white/90 hover:bg-white w-10 h-10 flex items-center justify-center transition-colors">
@@ -779,7 +766,7 @@
     <!-- Trainer Pop-ups -->
     <!-- Pop-up Trainer Max -->
     <div id="popup-trainer-max" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 popup-overlay">
-        <div class="bg-white max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="bg-white max-w-5xl w-full max-h-[90vh] overflow-y-auto">
             <div class="relative">
                 <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=2070" alt="Trainer Max" class="w-full h-80 object-cover">
                 <button onclick="closePopup('popup-trainer-max')" class="absolute top-4 right-4 bg-white/90 hover:bg-white w-10 h-10 flex items-center justify-center transition-colors">
@@ -876,7 +863,7 @@
 
     <!-- Pop-up Trainerin Sarah -->
     <div id="popup-trainer-sarah" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 popup-overlay">
-        <div class="bg-white max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="bg-white max-w-5xl w-full max-h-[90vh] overflow-y-auto">
             <div class="relative">
                 <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=2070" alt="Trainerin Sarah" class="w-full h-80 object-cover">
                 <button onclick="closePopup('popup-trainer-sarah')" class="absolute top-4 right-4 bg-white/90 hover:bg-white w-10 h-10 flex items-center justify-center transition-colors">
@@ -1204,7 +1191,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                 
                 <!-- Article 1 -->
-                <article class="fade-in bg-white overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                <article class="fade-in bg-white overflow-hidden hover:shadow-2xl transition-all duration-300 group transform hover:-translate-y-2">
                     <a href="blog.html" class="block">
                         <div class="relative overflow-hidden h-64">
                             <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070" 
@@ -1234,7 +1221,7 @@
                 </article>
                 
                 <!-- Article 2 -->
-                <article class="fade-in bg-white overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                <article class="fade-in bg-white overflow-hidden hover:shadow-2xl transition-all duration-300 group transform hover:-translate-y-2">
                     <a href="blog.html" class="block">
                         <div class="relative overflow-hidden h-64">
                             <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=2053" 
@@ -1264,7 +1251,7 @@
                 </article>
                 
                 <!-- Article 3 -->
-                <article class="fade-in bg-white overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                <article class="fade-in bg-white overflow-hidden hover:shadow-2xl transition-all duration-300 group transform hover:-translate-y-2">
                     <a href="blog.html" class="block">
                         <div class="relative overflow-hidden h-64">
                             <img src="https://images.unsplash.com/photo-1434682881908-b43d0467b798?q=80&w=2074" 

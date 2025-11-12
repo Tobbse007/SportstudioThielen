@@ -46,7 +46,7 @@
 <body class="bg-white text-gray-900">
 
     <!-- Navigation (gleiche wie auf Startseite) -->
-    <nav id="navbar" class="fixed top-0 left-0 right-0 bg-white z-50 nav-shadow">
+    <nav id="navbar" class="fixed top-0 left-0 right-0 bg-white z-50 nav-shadow transition-all duration-500">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center space-x-3">
@@ -59,12 +59,15 @@
                     </a>
                 </div>
 
-                <div class="hidden md:flex items-center space-x-8">
+                <div class="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
                     <a href="index.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Startseite</a>
                     <a href="index.html#about" class="text-gray-700 hover:text-primary font-medium transition-colors">Über uns</a>
                     <a href="index.html#prices" class="text-gray-700 hover:text-primary font-medium transition-colors">Preise</a>
                     <a href="blog.html" class="text-primary font-medium transition-colors">Blog</a>
                     <a href="index.html#contact" class="text-gray-700 hover:text-primary font-medium transition-colors">Kontakt</a>
+                </div>
+
+                <div class="hidden md:block">
                     <a href="index.html#contact" class="bg-primary hover:bg-primary-dark text-white px-6 py-2.5 font-semibold transition-all duration-300 transform hover:scale-105">
                         Mitglied werden
                     </a>
@@ -107,17 +110,238 @@
     <!-- Blog Artikel -->
     <section class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-4">
-                <p class="text-gray-600">Bald hier: Spannende Artikel rund ums Training!</p>
-                <p class="text-sm text-gray-500 mt-2">Diese Seite ist in Vorbereitung.</p>
+            
+            <!-- Filter/Kategorien -->
+            <div class="flex flex-wrap gap-3 justify-center mb-12">
+                <button class="bg-primary text-white px-6 py-2 font-semibold hover:bg-primary-dark transition-colors">Alle</button>
+                <button class="bg-gray-200 text-gray-700 px-6 py-2 font-semibold hover:bg-gray-300 transition-colors">Training</button>
+                <button class="bg-gray-200 text-gray-700 px-6 py-2 font-semibold hover:bg-gray-300 transition-colors">Ernährung</button>
+                <button class="bg-gray-200 text-gray-700 px-6 py-2 font-semibold hover:bg-gray-300 transition-colors">Lifestyle</button>
+                <button class="bg-gray-200 text-gray-700 px-6 py-2 font-semibold hover:bg-gray-300 transition-colors">News</button>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Würde hier echte Blog-Artikel einbinden -->
-                <div class="bg-white p-6 text-center">
-                    <p class="text-gray-600">Artikel folgen in Kürze...</p>
-                </div>
+                
+                <!-- Artikel 1: Die 5 besten Übungen für Muskelaufbau -->
+                <article class="bg-white overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070" 
+                             alt="Training" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-primary text-white px-3 py-1 text-sm font-semibold">Training</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sm text-gray-500 mb-2">10. November 2025</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                            Die 5 besten Übungen für Muskelaufbau
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Entdecke die effektivsten Übungen für schnellen und nachhaltigen Muskelaufbau. 
+                            Diese Basics sollte jeder kennen, der ernsthaft trainiert.
+                        </p>
+                        <div class="text-sm text-gray-500">Von Max Mustermann • 5 Min. Lesezeit</div>
+                    </div>
+                </article>
+                
+                <!-- Artikel 2: Protein-Timing -->
+                <article class="bg-white overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=2053" 
+                             alt="Ernährung" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-primary text-white px-3 py-1 text-sm font-semibold">Ernährung</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sm text-gray-500 mb-2">5. November 2025</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                            Protein-Timing: Wann ist der beste Zeitpunkt?
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Die richtige Protein-Aufnahme zur richtigen Zeit kann deine Trainingserfolge maximieren. 
+                            Erfahre, wann und wie viel du essen solltest.
+                        </p>
+                        <div class="text-sm text-gray-500">Von Sarah Schmidt • 7 Min. Lesezeit</div>
+                    </div>
+                </article>
+                
+                <!-- Artikel 3: Regeneration -->
+                <article class="bg-white overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1434682881908-b43d0467b798?q=80&w=2074" 
+                             alt="Regeneration" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-primary text-white px-3 py-1 text-sm font-semibold">Lifestyle</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sm text-gray-500 mb-2">1. November 2025</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                            Regeneration: Der unterschätzte Faktor
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Warum Erholung genauso wichtig ist wie das Training selbst. 
+                            Die besten Tipps für optimale Regeneration und bessere Erfolge.
+                        </p>
+                        <div class="text-sm text-gray-500">Von Max Mustermann • 6 Min. Lesezeit</div>
+                    </div>
+                </article>
+                
+                <!-- Artikel 4: Neue Geräte im Studio -->
+                <article class="bg-white overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070" 
+                             alt="Gym News" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-primary text-white px-3 py-1 text-sm font-semibold">News</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sm text-gray-500 mb-2">28. Oktober 2025</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                            Neue Geräte im Sportstudio Thielen! 
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Wir haben unser Equipment erweitert! Drei neue Kraftstationen und eine 
+                            zusätzliche Beinpresse sind ab sofort verfügbar. Komm vorbei!
+                        </p>
+                        <div class="text-sm text-gray-500">Von Sportstudio Thielen • 3 Min. Lesezeit</div>
+                    </div>
+                </article>
+                
+                <!-- Artikel 5: Krafttraining für Anfänger -->
+                <article class="bg-white overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=2070" 
+                             alt="Anfänger Training" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-primary text-white px-3 py-1 text-sm font-semibold">Training</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sm text-gray-500 mb-2">22. Oktober 2025</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                            Krafttraining für Anfänger: Der ultimative Guide
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Du bist neu im Gym? Kein Problem! Hier erfährst du alles über den perfekten 
+                            Einstieg ins Krafttraining - von der Technik bis zum Trainingsplan.
+                        </p>
+                        <div class="text-sm text-gray-500">Von Max Mustermann • 10 Min. Lesezeit</div>
+                    </div>
+                </article>
+                
+                <!-- Artikel 6: Herbst-Aktion -->
+                <article class="bg-white overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070" 
+                             alt="Aktion" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-primary text-white px-3 py-1 text-sm font-semibold">News</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sm text-gray-500 mb-2">15. Oktober 2025</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                            🍂 Herbst-Aktion: Bring a Friend!
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Werbe einen Freund und erhalte einen Monat gratis! Bis Ende November gilt: 
+                            Gemeinsam trainiert es sich besser - und günstiger.
+                        </p>
+                        <div class="text-sm text-gray-500">Von Sportstudio Thielen • 2 Min. Lesezeit</div>
+                    </div>
+                </article>
+                
+                <!-- Artikel 7: Ernährung im Winter -->
+                <article class="bg-white overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=2053" 
+                             alt="Winter Ernährung" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-primary text-white px-3 py-1 text-sm font-semibold">Ernährung</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sm text-gray-500 mb-2">10. Oktober 2025</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                            Ernährung im Winter: Fit durch die kalte Jahreszeit
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Die kalte Jahreszeit stellt besondere Anforderungen an deine Ernährung. 
+                            So bleibst du gesund, fit und auf Kurs mit deinen Zielen.
+                        </p>
+                        <div class="text-sm text-gray-500">Von Sarah Schmidt • 8 Min. Lesezeit</div>
+                    </div>
+                </article>
+                
+                <!-- Artikel 8: Motivation -->
+                <article class="bg-white overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1434682881908-b43d0467b798?q=80&w=2074" 
+                             alt="Motivation" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-primary text-white px-3 py-1 text-sm font-semibold">Lifestyle</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sm text-gray-500 mb-2">5. Oktober 2025</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                            Motivation am Tiefpunkt? So kommst du wieder auf Track
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Jeder kennt Motivationslöcher. Hier sind die besten Strategien, 
+                            um wieder ins Training zu finden und dranzubleiben.
+                        </p>
+                        <div class="text-sm text-gray-500">Von Max Mustermann • 6 Min. Lesezeit</div>
+                    </div>
+                </article>
+                
+                <!-- Artikel 9: Mitglieder-Spotlight -->
+                <article class="bg-white overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=2070" 
+                             alt="Member Spotlight" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-primary text-white px-3 py-1 text-sm font-semibold">News</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sm text-gray-500 mb-2">28. September 2025</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                            Mitglieder-Spotlight: Michaels Transformation
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            -20 kg in 6 Monaten! Michael erzählt seine inspirierende Geschichte und 
+                            gibt Tipps für alle, die ähnliche Ziele haben.
+                        </p>
+                        <div class="text-sm text-gray-500">Von Sportstudio Thielen • 5 Min. Lesezeit</div>
+                    </div>
+                </article>
+                
             </div>
+            
+            <!-- Pagination -->
+            <div class="flex justify-center items-center space-x-4 mt-16">
+                <button class="px-4 py-2 bg-gray-200 text-gray-400 font-semibold cursor-not-allowed">
+                    ← Vorherige
+                </button>
+                <span class="text-gray-700 font-medium">Seite 1 von 1</span>
+                <button class="px-4 py-2 bg-gray-200 text-gray-400 font-semibold cursor-not-allowed">
+                    Nächste →
+                </button>
+            </div>
+            
         </div>
     </section>
 
