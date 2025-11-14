@@ -104,8 +104,12 @@ function handleTrainerContact(event) {
     }
 }
 
-// Preise Toggle zwischen Abos und Tageskarten
+
+
+// OLD Toggle function (wird nicht mehr verwendet, aber als Backup behalten)
 function togglePrices() {
+    console.log('=== OLD togglePrices CALLED (should not be used) ===');
+    
     const aboCards = document.getElementById('abo-cards');
     const cardsSection = document.getElementById('cards-section');
     const toggleDot = document.getElementById('toggle-dot');
@@ -113,25 +117,105 @@ function togglePrices() {
     const aboLabel = document.getElementById('abo-label');
     const cardsLabel = document.getElementById('cards-label');
     
-    // Toggle visibility
-    if (aboCards.classList.contains('grid')) {
+    console.log('Elements found:', {
+        aboCards: !!aboCards,
+        cardsSection: !!cardsSection,
+        toggleDot: !!toggleDot,
+        toggleBtn: !!toggleBtn
+    });
+    
+    if (!aboCards || !cardsSection) {
+        console.error('ERROR: Required elements not found!');
+        return;
+    }
+    
+    // Check if showing Abos (check computed style, not inline style)
+    const aboDisplay = window.getComputedStyle(aboCards).display;
+    const cardsDisplay = window.getComputedStyle(cardsSection).display;
+    const isShowingAbos = aboDisplay !== 'none';
+    
+    console.log('Current display states:', {
+        aboCards: aboDisplay,
+        cardsSection: cardsDisplay,
+        isShowingAbos: isShowingAbos
+    });
+    
+    // Responsive toggle distance
+    const isMobile = window.innerWidth < 768;
+    const toggleDistance = isMobile ? '28px' : '32px';
+    
+    if (isShowingAbos) {
+        console.log('>>> Switching TO Tageskarten');
         // Switch to Tageskarten
-        aboCards.classList.remove('grid');
-        aboCards.classList.add('hidden');
-        cardsSection.classList.remove('hidden');
-        cardsSection.classList.add('grid');
-        toggleDot.style.transform = 'translateX(32px)';
+        // 1. Fade out Abos
+        aboCards.style.opacity = '0';
+        aboCards.style.transform = 'translateY(-20px)';
+        console.log('Step 1: Fading out Abos');
+        
+        setTimeout(() => {
+            aboCards.style.display = 'none';
+            console.log('Step 2: Abos hidden, showing Tageskarten');
+            
+            // 2. Show and fade in Tageskarten
+            cardsSection.style.display = 'grid';
+            cardsSection.style.opacity = '0';
+            cardsSection.style.transform = 'translateY(20px)';
+            
+            console.log('Tageskarten display set to grid');
+            
+            // Force reflow
+            void cardsSection.offsetHeight;
+            
+            setTimeout(() => {
+                cardsSection.style.opacity = '1';
+                cardsSection.style.transform = 'translateY(0)';
+                console.log('Step 3: Tageskarten faded in', {
+                    display: cardsSection.style.display,
+                    opacity: cardsSection.style.opacity
+                });
+            }, 50);
+        }, 300);
+        
+        // Update toggle UI
+        toggleDot.style.transform = `translateX(${toggleDistance})`;
         toggleBtn.classList.add('bg-primary-dark');
         aboLabel.classList.remove('text-primary');
         aboLabel.classList.add('text-gray-500');
         cardsLabel.classList.remove('text-gray-500');
         cardsLabel.classList.add('text-primary');
     } else {
+        console.log('>>> Switching TO Abos');
         // Switch to Abos
-        cardsSection.classList.remove('grid');
-        cardsSection.classList.add('hidden');
-        aboCards.classList.remove('hidden');
-        aboCards.classList.add('grid');
+        // 1. Fade out Tageskarten
+        cardsSection.style.opacity = '0';
+        cardsSection.style.transform = 'translateY(-20px)';
+        console.log('Step 1: Fading out Tageskarten');
+        
+        setTimeout(() => {
+            cardsSection.style.display = 'none';
+            console.log('Step 2: Tageskarten hidden, showing Abos');
+            
+            // 2. Show and fade in Abos
+            aboCards.style.display = 'grid';
+            aboCards.style.opacity = '0';
+            aboCards.style.transform = 'translateY(20px)';
+            
+            console.log('Abos display set to grid');
+            
+            // Force reflow
+            void aboCards.offsetHeight;
+            
+            setTimeout(() => {
+                aboCards.style.opacity = '1';
+                aboCards.style.transform = 'translateY(0)';
+                console.log('Step 3: Abos faded in', {
+                    display: aboCards.style.display,
+                    opacity: aboCards.style.opacity
+                });
+            }, 50);
+        }, 300);
+        
+        // Update toggle UI
         toggleDot.style.transform = 'translateX(0)';
         toggleBtn.classList.remove('bg-primary-dark');
         cardsLabel.classList.remove('text-primary');
