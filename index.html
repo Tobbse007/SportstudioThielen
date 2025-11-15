@@ -1712,8 +1712,17 @@
                     <div class="text-gray-400">
                         © 2025 Sportstudio Thielen. Alle Rechte vorbehalten.
                     </div>
-                    <a href="https://verein-web.de" target="_blank" rel="noopener" class="text-primary hover:text-primary-light transition-colors">
-                        verein-web.de
+                    <a href="https://vereins-web.de" target="_blank" rel="noopener" class="group relative inline-flex h-8 items-center justify-center overflow-hidden rounded-lg bg-gradient-to-r from-slate-600 via-slate-600 to-slate-500 px-3 text-white text-xs font-medium shadow-sm shadow-slate-900/20 ring-1 ring-slate-300/20 transition-all duration-300 ease-out hover:shadow-md hover:from-slate-600 hover:via-slate-600 hover:to-slate-500 hover:ring-slate-200/40">
+                        <!-- Subtle inner glow on hover -->
+                        <span class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" aria-hidden="true">
+                            <span class="absolute inset-0 bg-[radial-gradient(80px_40px_at_10%_50%,rgba(255,255,255,0.15),transparent_60%),radial-gradient(80px_40px_at_90%_50%,rgba(255,255,255,0.12),transparent_60%)]"></span>
+                        </span>
+                        <span class="relative z-10 inline-flex items-center gap-1.5">
+                            erstellt von <span class="text-white transition-transform duration-300 group-hover:scale-110 origin-center">Vereins<span class="text-blue-500">Web</span></span>
+                            <svg viewBox="0 0 24 24" class="h-3 w-3 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M13 5l7 7-7 7"/>
+                            </svg>
+                        </span>
                     </a>
                     <div class="flex gap-6">
                         <a href="impressum.html" class="text-gray-400 hover:text-primary transition-colors">Impressum</a>
