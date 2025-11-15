@@ -178,11 +178,26 @@
 
                 <!-- Desktop Menu - Centered -->
                 <div class="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
-                    <a href="#home" class="text-gray-700 hover:text-primary font-medium transition-colors">Startseite</a>
-                    <a href="#about" class="text-gray-700 hover:text-primary font-medium transition-colors">Über uns</a>
-                    <a href="#services" class="text-gray-700 hover:text-primary font-medium transition-colors">Leistungen</a>
-                    <a href="#prices" class="text-gray-700 hover:text-primary font-medium transition-colors">Preise</a>
-                    <a href="#contact" class="text-gray-700 hover:text-primary font-medium transition-colors">Kontakt</a>
+                    <a href="#home" class="text-gray-700 hover:text-primary font-medium transition-colors relative pb-1 group">
+                        Startseite
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#about" class="text-gray-700 hover:text-primary font-medium transition-colors relative pb-1 group">
+                        Über uns
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#services" class="text-gray-700 hover:text-primary font-medium transition-colors relative pb-1 group">
+                        Leistungen
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#prices" class="text-gray-700 hover:text-primary font-medium transition-colors relative pb-1 group">
+                        Preise
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary font-medium transition-colors relative pb-1 group">
+                        Kontakt
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
                 </div>
 
                 <!-- CTA Button - Right -->
@@ -193,16 +208,16 @@
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden text-gray-700 focus:outline-none">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700 focus:outline-none relative w-7 h-7 flex items-center justify-center">
+                    <span class="hamburger-line absolute w-full h-0.5 bg-current transition-all duration-300" style="top: 5px;"></span>
+                    <span class="hamburger-line absolute w-full h-0.5 bg-current transition-all duration-300" style="top: 50%; transform: translateY(-50%);"></span>
+                    <span class="hamburger-line absolute w-full h-0.5 bg-current transition-all duration-300" style="bottom: 5px;"></span>
                 </button>
             </div>
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+        <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-200 overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
             <div class="px-4 py-4 space-y-3">
                 <a href="#home" class="block text-gray-700 hover:text-primary font-medium py-2 transition-colors">Startseite</a>
                 <a href="#about" class="block text-gray-700 hover:text-primary font-medium py-2 transition-colors">Über uns</a>
@@ -217,7 +232,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen flex items-center bg-white overflow-hidden">
+    <section id="home" class="relative flex items-center bg-white overflow-hidden pt-24 pb-12 lg:min-h-screen lg:py-0">
         
         <!-- Background Pattern - Full Width -->
         <div class="absolute inset-0 z-0">
@@ -244,8 +259,8 @@
                 rgba(249, 250, 251, 0) 40%);"></div>
         </div>
         
-        <div class="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-            <div class="max-w-2xl lg:max-w-xl space-y-8 hero-content">
+        <div class="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-32">
+            <div class="max-w-2xl lg:max-w-xl space-y-5 lg:space-y-8 hero-content">
                 
                 <!-- Badge -->
                 <div class="hero-badge inline-flex items-center gap-2 bg-primary/10 border border-primary/20 px-4 py-2 text-sm font-semibold text-primary">
@@ -373,7 +388,7 @@
                         <div class="text-white/90 text-sm">Jahre im Geschäft</div>
                     </div>
                     <div class="transition-transform duration-300 hover:scale-110">
-                        <div class="text-5xl font-bold mb-2">200+</div>
+                        <div class="text-5xl font-bold mb-2">50+</div>
                         <div class="text-white/90 text-sm">Aktive Mitglieder</div>
                     </div>
                     <div class="transition-transform duration-300 hover:scale-110">
@@ -391,7 +406,7 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-20 lg:py-32 bg-gray-50">
+    <section id="services" class="py-12 lg:py-32 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <!-- Section Header -->
@@ -406,7 +421,7 @@
             </div>
             
             <!-- Services Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div id="services-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <!-- Service 1: Duschen & Umkleiden -->
                 <div class="fade-in bg-gray-50 p-8 hover:shadow-2xl transition-all duration-300 group cursor-pointer transform hover:-translate-y-2" onclick="openPopup('popup-duschen')">
@@ -501,7 +516,7 @@
                         </span>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-3">Faire & Flexible Preismodelle</h3>
-                    <p class="text-gray-600 mb-6">Monatliche Mitgliedschaften ohne Vertragsbindung ab 25€ pro Monat.</p>
+                    <p class="text-gray-600 mb-6">Schüler-Abo 25€, Normal-Abo 30€, Familien-Abo auf Anfrage. Monatlich kündbar, keine Vertragsbindung.</p>
                     <button class="text-primary font-semibold flex items-center group-hover:gap-2 transition-all">
                         Mehr erfahren
                         <svg class="w-5 h-5 ml-1 group-hover:ml-2 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -511,15 +526,25 @@
                 </div>
                 
             </div>
+            
+            <!-- Show More Link -->
+            <div class="text-center mt-10 lg:hidden">
+                <button id="toggle-services-btn" class="inline-flex items-center gap-2 text-primary hover:text-primary-dark transition-colors duration-300 group">
+                    <span class="font-semibold">Alle 6 Leistungen anzeigen</span>
+                    <svg id="toggle-arrow" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+            </div>
         </div>
     </section>
 
     <!-- Service Pop-ups -->
     <!-- Pop-up 1: Duschen -->
-    <div id="popup-duschen" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 popup-overlay">
-        <div class="bg-white max-w-2xl w-full shadow-2xl relative">
+    <div id="popup-duschen" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 md:p-8 popup-overlay">
+        <div class="bg-white max-w-2xl w-full shadow-2xl relative my-8 max-h-[90vh] overflow-y-auto">
             <button onclick="closePopup('popup-duschen')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
             </button>
@@ -577,10 +602,10 @@
     </div>
 
     <!-- Pop-up 2: Trainingszeiten -->
-    <div id="popup-zeiten" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 popup-overlay">
-        <div class="bg-white max-w-2xl w-full shadow-2xl relative">
+    <div id="popup-zeiten" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 md:p-8 popup-overlay">
+        <div class="bg-white max-w-2xl w-full shadow-2xl relative my-8 max-h-[90vh] overflow-y-auto">
             <button onclick="closePopup('popup-zeiten')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
             </button>
@@ -641,10 +666,10 @@
     </div>
 
     <!-- Pop-up 3: Getränke -->
-    <div id="popup-getraenke" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 popup-overlay">
-        <div class="bg-white max-w-2xl w-full shadow-2xl relative">
+    <div id="popup-getraenke" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 md:p-8 popup-overlay">
+        <div class="bg-white max-w-2xl w-full shadow-2xl relative my-8 max-h-[90vh] overflow-y-auto">
             <button onclick="closePopup('popup-getraenke')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
             </button>
@@ -685,10 +710,10 @@
     </div>
 
     <!-- Pop-up 4: Zugang -->
-    <div id="popup-zugang" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 popup-overlay">
-        <div class="bg-white max-w-2xl w-full shadow-2xl relative">
+    <div id="popup-zugang" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 md:p-8 popup-overlay">
+        <div class="bg-white max-w-2xl w-full shadow-2xl relative my-8 max-h-[90vh] overflow-y-auto">
             <button onclick="closePopup('popup-zugang')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
             </button>
@@ -742,10 +767,10 @@
     </div>
 
     <!-- Pop-up 5: Ausstattung -->
-    <div id="popup-ausstattung" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 popup-overlay">
-        <div class="bg-white max-w-4xl w-full shadow-2xl relative max-h-[90vh] overflow-y-auto">
+    <div id="popup-ausstattung" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 md:p-8 popup-overlay">
+        <div class="bg-white max-w-4xl w-full shadow-2xl relative my-8 max-h-[90vh] overflow-y-auto">
             <button onclick="closePopup('popup-ausstattung')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors z-10">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
             </button>
@@ -804,10 +829,10 @@
     </div>
 
     <!-- Pop-up 6: Preise -->
-    <div id="popup-preise" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 popup-overlay">
-        <div class="bg-white max-w-4xl w-full shadow-2xl relative max-h-[90vh] overflow-y-auto">
+    <div id="popup-preise" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 md:p-8 popup-overlay">
+        <div class="bg-white max-w-4xl w-full shadow-2xl relative my-8 max-h-[90vh] overflow-y-auto">
             <button onclick="closePopup('popup-preise')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors z-10">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
             </button>
@@ -821,7 +846,7 @@
                 
                 <h3 class="text-3xl font-bold text-gray-900 mb-3">Faire & Flexible Preismodelle</h3>
                 <p class="text-gray-600 mb-4 leading-relaxed">
-                    Faire Preise ohne versteckte Kosten und flexible Laufzeiten ohne lange Vertragsbindung.
+                    Faire Preise ohne versteckte Kosten und flexible Laufzeiten ohne lange Vertragsbindung. Wähle das Paket, das zu dir passt.
                 </p>
                 
                 <div class="bg-gray-50 p-4 mb-4">
@@ -829,38 +854,38 @@
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div class="bg-white p-4 border-l-4 border-primary">
                             <div class="text-center mb-3">
-                                <h5 class="font-bold text-gray-900 mb-1">Monats-Abo</h5>
+                                <h5 class="font-bold text-gray-900 mb-1">Schüler Abo</h5>
                                 <span class="text-3xl font-bold text-primary">25€</span>
                                 <div class="text-xs text-gray-500">pro Monat</div>
                             </div>
                             <ul class="text-sm text-gray-700 space-y-1">
-                                <li>• Monatlich kündbar</li>
                                 <li>• Zugang 6-22 Uhr</li>
                                 <li>• Alle Geräte inkl.</li>
+                                <li>• Schülerausweis erforderlich</li>
                             </ul>
                         </div>
                         <div class="bg-white p-4 border-l-4 border-primary">
                             <div class="text-center mb-3">
-                                <h5 class="font-bold text-gray-900 mb-1">Familien-Abo</h5>
-                                <span class="text-xl font-bold text-primary">Auf Anfrage</span>
-                                <div class="text-xs text-gray-500">&nbsp;</div>
+                                <h5 class="font-bold text-gray-900 mb-1">Normal Abo</h5>
+                                <span class="text-3xl font-bold text-primary">30€</span>
+                                <div class="text-xs text-gray-500">pro Monat</div>
                             </div>
                             <ul class="text-sm text-gray-700 space-y-1">
-                                <li>• Paare & Familien</li>
-                                <li>• Ermäßigungen</li>
-                                <li>• Flexibel</li>
+                                <li>• Zugang 6-22 Uhr</li>
+                                <li>• Alle Geräte inkl.</li>
+                                <li>• Monatlich kündbar</li>
                             </ul>
                         </div>
                         <div class="bg-white p-4 border-l-4 border-primary">
                             <div class="text-center mb-3">
-                                <h5 class="font-bold text-gray-900 mb-1">Tageskarte</h5>
-                                <span class="text-3xl font-bold text-primary">8€</span>
-                                <div class="text-xs text-gray-500">einmalig</div>
+                                <h5 class="font-bold text-gray-900 mb-1">Familien/Paar</h5>
+                                <span class="text-3xl font-bold text-primary">25€</span>
+                                <div class="text-xs text-gray-500">/Person</div>
                             </div>
                             <ul class="text-sm text-gray-700 space-y-1">
-                                <li>• Zum Reinschnuppern</li>
-                                <li>• Voller Tageszugang</li>
-                                <li>• Keine Gebühr</li>
+                                <li>• Ab 2 Personen</li>
+                                <li>• Zugang 6-22 Uhr</li>
+                                <li>• Alle Geräte inkl.</li>
                             </ul>
                         </div>
                     </div>
@@ -965,12 +990,12 @@
 
     <!-- Trainer Pop-ups -->
     <!-- Pop-up Trainer Max -->
-    <div id="popup-trainer-max" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 popup-overlay">
-        <div class="bg-white max-w-5xl w-full max-h-[90vh] overflow-y-auto">
+    <div id="popup-trainer-max" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 md:p-8 popup-overlay">
+        <div class="bg-white max-w-5xl w-full my-8 max-h-[90vh] overflow-y-auto">
             <div class="relative">
                 <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=2070" alt="Trainer Max" class="w-full h-80 object-cover">
-                <button onclick="closePopup('popup-trainer-max')" class="absolute top-4 right-4 bg-white/90 hover:bg-white w-10 h-10 flex items-center justify-center transition-colors">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button onclick="closePopup('popup-trainer-max')" class="absolute top-4 right-4 bg-white/90 hover:bg-white w-12 h-12 flex items-center justify-center transition-colors">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
                 </button>
@@ -1062,12 +1087,12 @@
     </div>
 
     <!-- Pop-up Trainerin Sarah -->
-    <div id="popup-trainer-sarah" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 popup-overlay">
-        <div class="bg-white max-w-5xl w-full max-h-[90vh] overflow-y-auto">
+    <div id="popup-trainer-sarah" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 md:p-8 popup-overlay">
+        <div class="bg-white max-w-5xl w-full my-8 max-h-[90vh] overflow-y-auto">
             <div class="relative">
                 <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=2070" alt="Trainerin Sarah" class="w-full h-80 object-cover">
-                <button onclick="closePopup('popup-trainer-sarah')" class="absolute top-4 right-4 bg-white/90 hover:bg-white w-10 h-10 flex items-center justify-center transition-colors">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button onclick="closePopup('popup-trainer-sarah')" class="absolute top-4 right-4 bg-white/90 hover:bg-white w-12 h-12 flex items-center justify-center transition-colors">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
                 </button>
@@ -1453,25 +1478,36 @@
                 
                 <!-- Kontaktformular -->
                 <div class="fade-in lg:col-span-3">
-                    <div class="bg-white p-8 shadow-lg h-full">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Deine Anfrage</h3>
-                        <form onsubmit="handleContactForm(event)" class="space-y-4">
+                    <div class="bg-white p-10 shadow-xl h-full border border-gray-100">
+                        <div class="mb-8">
+                            <h3 class="text-3xl font-bold text-gray-900 mb-2">Deine Anfrage</h3>
+                            <p class="text-gray-600">Fülle das Formular aus und wir melden uns schnellstmöglich bei dir.</p>
+                        </div>
+                        <form onsubmit="handleContactForm(event)" class="space-y-5">
                             <div>
                                 <label class="block text-sm font-semibold text-gray-900 mb-2">Name *</label>
                                 <input type="text" name="name" required
-                                       class="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all"
+                                       class="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 focus:border-primary focus:ring-0 focus:bg-white focus:outline-none transition-all"
                                        placeholder="Max Mustermann">
                             </div>
-                            <div>
-                                <label class="block text-sm font-semibold text-gray-900 mb-2">E-Mail *</label>
-                                <input type="email" name="email" required
-                                       class="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all"
-                                       placeholder="max@example.com">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-900 mb-2">E-Mail *</label>
+                                    <input type="email" name="email" required
+                                           class="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 focus:border-primary focus:ring-0 focus:bg-white focus:outline-none transition-all"
+                                           placeholder="max@example.com">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-900 mb-2">Telefon</label>
+                                    <input type="tel" name="phone"
+                                           class="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 focus:border-primary focus:ring-0 focus:bg-white focus:outline-none transition-all"
+                                           placeholder="+49 170 1234567">
+                                </div>
                             </div>
                             <div>
                                 <label class="block text-sm font-semibold text-gray-900 mb-2">Betreff *</label>
                                 <select name="subject" required
-                                        class="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all">
+                                        class="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 focus:border-primary focus:ring-0 focus:bg-white focus:outline-none transition-all">
                                     <option value="">Bitte auswählen</option>
                                     <option value="probetraining">Probetraining</option>
                                     <option value="mitgliedschaft">Mitgliedschaft</option>
@@ -1481,14 +1517,14 @@
                             </div>
                             <div>
                                 <label class="block text-sm font-semibold text-gray-900 mb-2">Nachricht *</label>
-                                <textarea name="message" rows="6" required
-                                          class="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all resize-none"
+                                <textarea name="message" rows="5" required
+                                          class="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 focus:border-primary focus:ring-0 focus:bg-white focus:outline-none transition-all resize-none"
                                           placeholder="Deine Nachricht..."></textarea>
                             </div>
-                            <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white py-4 px-6 rounded-lg font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+                            <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white py-3.5 px-6 font-bold text-lg transition-all duration-300 transform hover:scale-[1.02] hover:shadow-xl">
                                 Nachricht senden
                             </button>
-                            <p class="text-sm text-gray-600 text-center">* Pflichtfelder</p>
+                            <p class="text-sm text-gray-500 text-center">* Pflichtfelder</p>
                         </form>
                     </div>
                 </div>
@@ -1596,7 +1632,7 @@
                             <span class="text-xs text-gray-400 font-medium">OLDSCHOOL GYM</span>
                         </div>
                     </div>
-                    <p class="text-gray-400 text-sm mb-4">
+                    <p class="text-gray-400 text-base mb-4">
                         Dein Oldschool Gym mit familiärer Atmosphäre in Würchwitz. 
                         Authentisches Training seit Jahren.
                     </p>
@@ -1606,7 +1642,6 @@
                 <div>
                     <h3 class="text-lg font-bold mb-4">Quick Links</h3>
                     <ul class="space-y-2">
-                        <li><a href="#home" class="text-gray-400 hover:text-primary transition-colors">Startseite</a></li>
                         <li><a href="#about" class="text-gray-400 hover:text-primary transition-colors">Über uns</a></li>
                         <li><a href="#services" class="text-gray-400 hover:text-primary transition-colors">Leistungen</a></li>
                         <li><a href="#prices" class="text-gray-400 hover:text-primary transition-colors">Preise</a></li>
@@ -1629,9 +1664,6 @@
                             <a href="mailto:info@sportstudio-thielen.de" class="hover:text-primary transition-colors">
                                 info@sportstudio-thielen.de
                             </a>
-                        </li>
-                        <li class="pt-2 font-semibold text-white">
-                            Täglich 6-22 Uhr
                         </li>
                     </ul>
                 </div>

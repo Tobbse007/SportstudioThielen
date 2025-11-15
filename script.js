@@ -1,16 +1,51 @@
-// Mobile Menu Toggle
+// Mobile Menu Toggle with smooth animation
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
 const mobileMenu = document.getElementById('mobile-menu');
+const hamburgerLines = mobileMenuBtn.querySelectorAll('.hamburger-line');
+let isMenuOpen = false;
 
 mobileMenuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
+    isMenuOpen = !isMenuOpen;
+    
+    if (isMenuOpen) {
+        // Open menu
+        mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+        
+        // Transform to X (perfekt symmetrisch)
+        hamburgerLines[0].style.top = '50%';
+        hamburgerLines[0].style.transform = 'translateY(-50%) rotate(45deg)';
+        hamburgerLines[1].style.opacity = '0';
+        hamburgerLines[2].style.bottom = 'auto';
+        hamburgerLines[2].style.top = '50%';
+        hamburgerLines[2].style.transform = 'translateY(-50%) rotate(-45deg)';
+    } else {
+        // Close menu
+        mobileMenu.style.maxHeight = '0';
+        
+        // Transform back to hamburger
+        hamburgerLines[0].style.top = '5px';
+        hamburgerLines[0].style.transform = 'none';
+        hamburgerLines[1].style.opacity = '1';
+        hamburgerLines[2].style.top = 'auto';
+        hamburgerLines[2].style.bottom = '5px';
+        hamburgerLines[2].style.transform = 'none';
+    }
 });
 
 // Close mobile menu when clicking on a link
 const mobileLinks = mobileMenu.querySelectorAll('a');
 mobileLinks.forEach(link => {
     link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
+        isMenuOpen = false;
+        mobileMenu.style.maxHeight = '0';
+        
+        // Transform back to hamburger
+        hamburgerLines[0].style.top = '5px';
+        hamburgerLines[0].style.transform = 'none';
+        hamburgerLines[1].style.opacity = '1';
+        hamburgerLines[2].style.top = 'auto';
+        hamburgerLines[2].style.bottom = '5px';
+        hamburgerLines[2].style.transform = 'none';
     });
 });
 
@@ -58,6 +93,85 @@ const observer = new IntersectionObserver((entries) => {
 document.addEventListener('DOMContentLoaded', () => {
     const fadeElements = document.querySelectorAll('.fade-in');
     fadeElements.forEach(el => observer.observe(el));
+});
+
+// Services Toggle - Show/Hide last 3 services (nur Mobile)
+document.addEventListener('DOMContentLoaded', () => {
+    const servicesGrid = document.getElementById('services-grid');
+    const toggleBtn = document.getElementById('toggle-services-btn');
+    const toggleArrow = document.getElementById('toggle-arrow');
+    const allServices = servicesGrid.querySelectorAll('.fade-in');
+    let isExpanded = false;
+    
+    // Hide last 3 services initially only on mobile
+    function updateServicesDisplay() {
+        const isMobile = window.innerWidth < 1024;
+        
+        if (!isMobile) {
+            // Desktop: Alle Services anzeigen
+            allServices.forEach((service) => {
+                service.style.display = 'block';
+                service.style.opacity = '1';
+                service.style.transform = 'translateY(0)';
+            });
+            isExpanded = false;
+        } else {
+            // Mobile: Nur erste 3 oder alle je nach isExpanded
+            allServices.forEach((service, index) => {
+                if (index >= 3) {
+                    if (!isExpanded) {
+                        service.style.display = 'none';
+                    } else {
+                        service.style.display = 'block';
+                        service.style.opacity = '1';
+                        service.style.transform = 'translateY(0)';
+                    }
+                }
+            });
+        }
+    }
+    
+    updateServicesDisplay();
+    window.addEventListener('resize', updateServicesDisplay);
+    
+    toggleBtn.addEventListener('click', () => {
+        isExpanded = !isExpanded;
+        
+        if (isExpanded) {
+            // Show all services
+            allServices.forEach((service, index) => {
+                if (index >= 3) {
+                    service.style.display = 'block';
+                    service.style.opacity = '0';
+                    service.style.transform = 'translateY(20px)';
+                    
+                    setTimeout(() => {
+                        service.style.transition = 'opacity 0.4s ease-out, transform 0.4s ease-out';
+                        service.style.opacity = '1';
+                        service.style.transform = 'translateY(0)';
+                    }, 50 * (index - 2));
+                }
+            });
+            
+            toggleBtn.querySelector('span').textContent = 'Weniger anzeigen';
+            toggleArrow.style.transform = 'rotate(180deg)';
+        } else {
+            // Hide last 3 services
+            allServices.forEach((service, index) => {
+                if (index >= 3) {
+                    service.style.opacity = '0';
+                    service.style.transform = 'translateY(-20px)';
+                    
+                    setTimeout(() => {
+                        service.style.display = 'none';
+                    }, 300);
+                }
+            });
+            
+            toggleBtn.querySelector('span').textContent = 'Alle 6 Leistungen anzeigen';
+            toggleArrow.style.transform = 'rotate(0deg)';
+        }
+    });
 });
 
 // Pop-up functionality (wird später für Services & Trainer genutzt)
